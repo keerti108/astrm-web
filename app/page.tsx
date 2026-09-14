@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { products } from "@/lib/products";
 import HeroCanvas from "@/components/HeroCanvas";
+import ScrollStory from "@/components/ScrollStory";
 
 export default function Home() {
   const product = products[0];
@@ -263,85 +264,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── THREE PILLARS ─────────────────────── */}
-      <section
-        style={{
-          padding: "clamp(80px, 10vw, 140px) 0",
-          background: "var(--paper-alt)",
-        }}
-      >
-        <div className="wrap">
-          <div className="section-label">What it does</div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "clamp(32px, 4vw, 56px)",
-            }}
-          >
-            {[
-              {
-                num: "01",
-                heading: "Splay",
-                body: "Designed to let the forefoot spread under load, the way it naturally would without a conventional midsole constraining it.",
-              },
-              {
-                num: "02",
-                heading: "Flex",
-                body: "The chassis is tuned to allow controlled medial arch motion during the propulsive phase of each step.",
-              },
-              {
-                num: "03",
-                heading: "Recoil",
-                body: "Tuned to spring rather than absorb. Energy returned through the arch at push-off, rather than dampened.",
-              },
-            ].map((pillar) => (
-              <div
-                key={pillar.num}
-                style={{
-                  borderTop: "2px solid var(--rule)",
-                  paddingTop: "clamp(24px, 2.5vw, 36px)",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "11px",
-                    letterSpacing: "0.14em",
-                    color: "var(--signal)",
-                    display: "block",
-                    marginBottom: "16px",
-                  }}
-                >
-                  {pillar.num}
-                </span>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 700,
-                    fontSize: "clamp(24px, 3vw, 36px)",
-                    textTransform: "uppercase",
-                    letterSpacing: "-0.01em",
-                    color: "var(--ink)",
-                    marginBottom: "16px",
-                  }}
-                >
-                  {pillar.heading}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "clamp(16px, 1.3vw, 19px)",
-                    lineHeight: 1.7,
-                    color: "var(--ink-soft)",
-                  }}
-                >
-                  {pillar.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ScrollStory />
 
       {/* ── PRODUCT PREVIEW ─────────────────── */}
       <section
